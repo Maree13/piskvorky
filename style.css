@@ -6,6 +6,6 @@ html {
   box-sizing: inherit;
 }
 
-h1 {
+.title {
   font-family: "lobster", sans-serif;
 }
