@@ -6,6 +6,70 @@ html {
   box-sizing: inherit;
 }
 
-.title {
+  body { 
+  background: linear-gradient(to bottom, #615dad, #ffc8da);
+  background-repeat: no-repeat; 
+  padding-bottom:100%;
+} 
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo {
+  width: 50%;
+  margin-top: 50px;
+
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  background-color: #283e50;
+  width: 50%;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+}
+
+.article__title {
   font-family: "lobster", sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.nav { 
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.nav__button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav__button--rules {
+  background-color: #1fcca4;
+}
+
+.nav__button--rules:hover {
+  background-color: #1cbb96;
+}
+
+.nav__button--start {
+  background-color: #0197f6;
+}
+
+.nav__button--start:hover {
+  background-color: #0090e9;
 }
