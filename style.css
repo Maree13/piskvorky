@@ -43,9 +43,12 @@ html {
 .article__title {
   font-family: "lobster", sans-serif;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #ffffff;
+  max-width: 100%;
 }
+
+
 
 .nav { 
   display: flex;
@@ -78,4 +81,16 @@ html {
 
 .nav__button--start:hover {
   background-color: #0090e9;
+}
+
+@media (min-width: 700px) {
+  .article__title{
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .article__title{
+    font-size: 5rem;
+  }
 }
