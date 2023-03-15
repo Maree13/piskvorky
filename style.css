@@ -19,19 +19,19 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5vh;
-  /* padding-top: 2.5rem; */
+  padding-top: 2.5rem; 
 }
 
 .image {
-  width: 50%;
+  display: block;
+  width: 25%;
 } 
 
 .article {
   display: flex;
   flex-direction: column;
   background-color: #283e50;
-  width: 50%;
+  width: 25%;
   color: #ffffff;
   text-align: center;
   padding: 12px;
@@ -50,7 +50,7 @@ html {
 .nav { 
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 25%;
 }
 
 .nav__button {
