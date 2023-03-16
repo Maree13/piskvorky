@@ -42,7 +42,7 @@ html {
   text-align: center;
   font-size: 2rem;
   color: #ffffff;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 
@@ -85,6 +85,10 @@ html {
   .article,
   .nav {
     width: 70%;
+  }
+
+  .game {
+    padding-top: 0.5rem; 
   }
 }
 @media (min-width: 700px) {
