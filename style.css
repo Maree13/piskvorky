@@ -51,20 +51,45 @@ html {
   display: flex;
   flex-direction: column;
   width: 60%;
+} 
+
+.nav__link {
+  text-decoration: none;
+  color: #ffffff;
+  border-style:hidden;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.nav__button {
+.nav__link--rules {
+  background-color: #1fcca4;
+}
+
+.nav__link--rules:hover {
+  background-color: #1cbb96;
+}
+
+.nav__link--start {
+  background-color: #0197f6;
+}
+
+.nav__link--start:hover {
+  background-color: #0090e9;
+}
+/* .nav__button {
   padding-top: 15px;
   padding-bottom: 15px;
   border-style: none;
-}
+} */
 
-.link {
+/* .link {
   text-decoration: none;
   color: #ffffff;
-}
+} */
 
-.nav__button--rules {
+
+/* .nav__button--rules {
   background-color: #1fcca4;
 }
 
@@ -78,7 +103,7 @@ html {
 
 .nav__button--start:hover {
   background-color: #0090e9;
-}
+} */
 
 @media (max-width: 300px) {
   .image,
