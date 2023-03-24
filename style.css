@@ -2,24 +2,26 @@ html {
   box-sizing: border-box;
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: inherit;
 }
 
-.body { 
+.body {
   overflow-x: hidden;
   background: linear-gradient(to bottom, #615dad, #ffc8da);
   /* background-size: cover;
   background-position: center; */
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-repeat: no-repeat;
-}   
+}
 
 .game {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1.5rem; 
+  padding-top: 1.5rem;
 }
 
 .image {
@@ -27,7 +29,7 @@ html {
   width: 60%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-} 
+}
 
 .article {
   display: flex;
@@ -36,7 +38,9 @@ html {
   width: 60%;
   color: #ffffff;
   text-align: center;
-  padding: 12px;
+  /* padding-left: 30px;
+  padding-right: 30px; */
+  padding: 0 30px 50px 30px;
 }
 
 .article__title {
@@ -44,84 +48,60 @@ html {
   text-align: center;
   font-size: 2rem;
   color: #ffffff;
-  /* max-width: 100%; */
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
 
 
-
-.nav { 
+.nav {
   display: flex;
   flex-direction: column;
   width: 60%;
-} 
+}
 
 .nav__link {
   text-decoration: none;
   color: #ffffff;
-  border-style:hidden;
+  border-style: hidden;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-.nav__link--rules {
+.nav__rules {
   background-color: #1fcca4;
 }
 
-.nav__link--rules:hover {
+.nav__rules:hover {
   background-color: #1cbb96;
 }
 
-.nav__link--start {
+.nav__start {
   background-color: #0197f6;
 }
 
-.nav__link--start:hover {
+.nav__start:hover {
   background-color: #0090e9;
 }
-/* .nav__button {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-style: none;
-} */
-
-/* .link {
-  text-decoration: none;
-  color: #ffffff;
-} */
-
-
-/* .nav__button--rules {
-  background-color: #1fcca4;
-}
-
-.nav__button--rules:hover {
-  background-color: #1cbb96;
-}
-
-.nav__button--start {
-  background-color: #0197f6;
-}
-
-.nav__button--start:hover {
-  background-color: #0090e9;
-} */
 
 @media (max-width: 300px) {
+
   .image,
   .article,
   .nav {
-    width: 70%;
+    width: 90%;
   }
 
   .game {
-    padding-top: 0.5rem; 
+    padding-top: 0.3rem;
   }
 }
+
 @media (min-width: 700px) {
-  .article__title{
+  .article__title {
     font-size: 3rem;
   }
+
 
   .image,
   .article,
@@ -130,14 +110,15 @@ html {
   }
 }
 
- @media (min-width: 1200px) {
-  .article__title{
+@media (min-width: 1200px) {
+  .article__title {
     font-size: 4rem;
   }
+
 
   .image,
   .article,
   .nav {
-    width: 35%;
+    width: 25%;
   }
-} 
+}
