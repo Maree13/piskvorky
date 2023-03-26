@@ -10,11 +10,24 @@ html {
 
 /* PAGE HRA.HTML */
 
+/*Hra.html - body*/
+
 .body__game {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "lobster", sans-serif;
 }
+
+/*Hra.html - title h1*/
+
+.title__game {
+  text-align: center;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+/* Hra.html - table grid */
 
 
 .grid__container {
@@ -33,16 +46,17 @@ html {
 }
 
 .grid__button:focus {
-  background-color: #E6D6E6;
+  background-color: #EFE5EF;
 }
 
+/* Hra.html - menu */
 
 .menu__container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 80vmin;
-  /* position: relative; */
+  align-items: baseline;
 }
 
 
@@ -54,13 +68,9 @@ html {
   border: none;
   cursor: pointer;
   position: relative;
-  left: -45px
+  left: -45px;
 }
 
-.button__player:focus,
-.button__player:hover {
-  background-color: #0197f6;
-}
 
 .button__title {
   color: #ffffff;
@@ -71,8 +81,6 @@ html {
 }
 
 .button__circle {
-  /* border: solid 2px white;
-  border-radius: 50%; */
   width: 27px;
   height: 27px;
   -webkit-border-radius: 25px;
@@ -82,14 +90,21 @@ html {
   border: solid 3px white;
 }
 
-.title__game {
-  font-family: "lobster", sans-serif;
-  text-align: center;
-  font-size: 3rem;
-  color: #ffffff;
-  /* margin-bottom: 10px;
-  margin-top: 30px; */
+.button__home,
+.button__game {
+  padding: 1rem;
+  border-radius: 5px;
 }
+
+.button__home {
+  background-color: #0197f6;
+}
+
+.button__game {
+  background-color: #1fcca4;
+  margin-left: 0.7rem;
+}
+
 
 .buttons__ikons {
   display: flex;
@@ -98,8 +113,8 @@ html {
 }
 
 
-
 /* MAIN PAGE */
+
 .body {
   overflow-x: hidden;
   background: linear-gradient(to bottom, #615dad, #ffc8da);
