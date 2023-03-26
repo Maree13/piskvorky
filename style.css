@@ -28,17 +28,53 @@ html {
   width: 8vmin;
   height: 8vmin;
   border-radius: 0;
+  background-color: #E0CCE0;
+  cursor: pointer;
+}
+
+.grid__button:focus {
+  background-color: #E6D6E6;
 }
 
 
-.menu__game {}
+.menu__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 80vmin;
+  /* position: relative; */
+}
 
 
-.buttom__circle {
+.button__player {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: -45px
+}
+
+.button__player:focus,
+.button__player:hover {
+  background-color: #0197f6;
+}
+
+.button__title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-right: 10px;
+}
+
+.button__circle {
   /* border: solid 2px white;
   border-radius: 50%; */
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
@@ -54,6 +90,14 @@ html {
   /* margin-bottom: 10px;
   margin-top: 30px; */
 }
+
+.buttons__ikons {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: flex-end;
+}
+
+
 
 /* MAIN PAGE */
 .body {
