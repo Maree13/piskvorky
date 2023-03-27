@@ -49,6 +49,10 @@ html {
   background-color: #EFE5EF;
 }
 
+.grid__button:hover {
+  background-color: #EFE5EF;
+}
+
 /* Hra.html - menu */
 
 .menu__container {
