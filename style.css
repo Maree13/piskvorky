@@ -43,6 +43,7 @@ html {
   border-radius: 0;
   background-color: #E0CCE0;
   cursor: pointer;
+  border: solid 1px black;
 }
 
 .grid__button:focus {
