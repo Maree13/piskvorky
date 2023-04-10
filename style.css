@@ -8,6 +8,25 @@ html {
   box-sizing: inherit;
 }
 
+/* NOVE TRIDY HRA.JS */
+
+.board__field--circle {
+  background-image: url("circle.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: grow 0.15s linear;
+}
+
+.board__field--cross {
+  background-image: url("cross.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: grow 0.15s linear;
+}
+
+
 /* PAGE HRA.HTML */
 
 /*Hra.html - body*/
@@ -44,7 +63,12 @@ html {
   background-color: #E0CCE0;
   cursor: pointer;
   border: solid 1px black;
+  display: block;
 }
+
+/* .grid__button {
+  background-color: #0090e9;
+} */
 
 .grid__button:focus {
   background-color: #EFE5EF;
