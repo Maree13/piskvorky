@@ -109,7 +109,7 @@ html {
   padding-right: 10px;
 }
 
-.button__circle {
+/* .button__circle {
   width: 27px;
   height: 27px;
   -webkit-border-radius: 25px;
@@ -117,7 +117,12 @@ html {
   border-radius: 25px;
   background-color: transparent;
   border: solid 3px white;
+} */
+
+button__circle {
+  color: white;
 }
+
 
 .button__home,
 .button__game {
