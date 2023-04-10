@@ -11,19 +11,19 @@ html {
 /* NOVE TRIDY HRA.JS */
 
 .board__field--circle {
-  background-image: url("circle.svg");
-  background-size: 80%;
+  background-image: url("/ikony/circle.svg");
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
-  animation: grow 0.15s linear;
+  /* animation: grow 0.15s linear; */
 }
 
 .board__field--cross {
-  background-image: url("cross.svg");
-  background-size: 80%;
+  background-image: url("/ikony/cross.svg");
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
-  animation: grow 0.15s linear;
+  /* animation: grow 0.15s linear; */
 }
 
 
