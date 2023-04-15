@@ -38,14 +38,27 @@ const addClass = (event) => {
   }
 };
 
-tlacitko1.addEventListener('click', addClass);
-tlacitko2.addEventListener('click', addClass);
-tlacitko3.addEventListener('click', addClass);
-tlacitko4.addEventListener('click', addClass);
-tlacitko5.addEventListener('click', addClass);
-tlacitko6.addEventListener('click', addClass);
-tlacitko7.addEventListener('click', addClass);
-tlacitko8.addEventListener('click', addClass);
-tlacitko9.addEventListener('click', addClass);
-tlacitko9.addEventListener('click', addClass);
-tlacitko10.addEventListener('click', addClass);
+// tlacitko1.addEventListener('click', addClass);
+// tlacitko2.addEventListener('click', addClass);
+// tlacitko3.addEventListener('click', addClass);
+// tlacitko4.addEventListener('click', addClass);
+// tlacitko5.addEventListener('click', addClass);
+// tlacitko6.addEventListener('click', addClass);
+// tlacitko7.addEventListener('click', addClass);
+// tlacitko8.addEventListener('click', addClass);
+// tlacitko9.addEventListener('click', addClass);
+// tlacitko9.addEventListener('click', addClass);
+// tlacitko10.addEventListener('click', addClass);
+
+//Vyber všechna políčka pomocí document.querySelectorAll.
+const policko = document.querySelectorAll('.grid__button');
+
+//Metodou forEach je všechny projdi a přidej jim posluchač události na kliknutí. Zařiď, aby kliknutí zavolalo funkci, kterou máš nachystanou z předchozího úkolu.
+
+policko.forEach((e) => {
+  e.addEventListener('click', addClass);
+});
+
+// Původních deset posluchačů smaž. Nejsou díky předchozímu kroku již potřeba.
+
+// Oveř si, že nyní hra reaguje na kliknutí na všechna políčka.
