@@ -1,3 +1,4 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 console.log('test');
 
 let currentPlayer = 'circle';
@@ -38,18 +39,6 @@ const addClass = (event) => {
   }
 };
 
-// tlacitko1.addEventListener('click', addClass);
-// tlacitko2.addEventListener('click', addClass);
-// tlacitko3.addEventListener('click', addClass);
-// tlacitko4.addEventListener('click', addClass);
-// tlacitko5.addEventListener('click', addClass);
-// tlacitko6.addEventListener('click', addClass);
-// tlacitko7.addEventListener('click', addClass);
-// tlacitko8.addEventListener('click', addClass);
-// tlacitko9.addEventListener('click', addClass);
-// tlacitko9.addEventListener('click', addClass);
-// tlacitko10.addEventListener('click', addClass);
-
 //Vyber všechna políčka pomocí document.querySelectorAll.
 const policko = document.querySelectorAll('.grid__button');
 
@@ -59,6 +48,21 @@ policko.forEach((e) => {
   e.addEventListener('click', addClass);
 });
 
-// Původních deset posluchačů smaž. Nejsou díky předchozímu kroku již potřeba.
+// Funkce findWinner očekává jeden vstupní parametr, pole řetězců 'x' pro křížek, 'o' pro kolečko a '_' pro neobsazené políčko. Zpátky po zavolání vrací, kdo vyhrál.
 
-// Oveř si, že nyní hra reaguje na kliknutí na všechna políčka.
+// Návratové hodnoty funkce findWinner:
+// 'x' - vyhrál hráč s křížky
+// 'o' - vyhrál hráč s kolečky
+// null - hra ještě neskončila, zatím nikdo nevyhrál
+// 'tie' - hra skončila remízou
+
+const herniPole = Array.from(policko).fill('_'); // Vytvorene pole '_'
+Array.console.log(herniPole);
+
+const vitez = findWinner(herniPole);
+console.log(vitez);
+
+if (vitez === 'o' || vitez === 'x') {
+  alert(`Vyhrál hráč se symbolem ${vitez}.`);
+  location.reload();
+}
