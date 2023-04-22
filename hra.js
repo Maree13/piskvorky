@@ -13,7 +13,11 @@ const ikonCross = `<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45
 const buttonCircleElm = document.querySelector('#playing');
 
 const addClass = (event, i) => {
-  herniPole[i] = currentPlayer === 'circle' ? 'o' : 'x';
+  herniPole[i] = currentPlayer === 'circle' ? 'o' : 'x'; //Nastav herniPole[i] na 'o', pokud je currentPlayer 'circle', jinak nastav herniPole[i] na 'x'. (Ekvivalent kodu: if (currentPlayer === 'circle') {
+  //   herniPole[i] = 'o';
+  // } else {
+  //   herniPole[i] = 'x';
+  // })
   if (currentPlayer === 'circle') {
     event.target.classList.add('board__field--circle');
     event.target.disabled = true;
@@ -51,7 +55,17 @@ policko.forEach((e, index) => {
 const herniPole = Array.from(policko).fill('_'); // Vytvorene pole '_'
 console.log(herniPole);
 
-const testMap = herniPole.map((p) => {
+// const testMap = herniPole.map((p) => {
+//   if (p.classList.contains('board__field--circle')) {
+//     return 'o';
+//   } else if (p.classList.contains('board__field--cross')) {
+//     return 'x';
+//   } else {
+//     return '_';
+//   }
+// });
+
+const testMap = policko.map((p) => {
   if (p.classList.contains('board__field--circle')) {
     return 'o';
   } else if (p.classList.contains('board__field--cross')) {
