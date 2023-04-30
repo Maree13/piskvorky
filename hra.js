@@ -43,11 +43,11 @@ const addClass = (event, i) => {
   }
 
   // UKOL 5 - Po každém tahu, pokud zatím nikdo nevyhrál, ověř, jestli je na tahu křížek. Pridana podmienka na overenie, ci je na tahu krizek.
-  else if (currentPlayer === 'x') {
-    console.log('Na tahu je krizek');
-    dalsiTah().then((tah) => {
-      console.log(tah);
-    });
+  else {
+    if (currentPlayer === 'cross') {
+      console.log('Na tahu je krizek');
+      makeSuggestedMove(); //Volam funkci makeSuggestedMove
+    }
   }
 };
 
@@ -63,25 +63,48 @@ policko.forEach((e, index) => {
 const herniPole = Array.from(policko).fill('_'); // Vytvorene pole '_'
 console.log(herniPole);
 
-//PRIDAVAM FETCH - UKOL 5
-fetch('https://piskvorky.czechitas-podklady.cz/api/suggest-next-move', {
-  method: 'POST',
-  headers: {
-    'Content-type': 'application/json',
-  },
-  body: JSON.stringify({
-    board: herniPole,
-    player: 'x', // Hledá tah pro křížek.
-  }),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    const { x, y } = data.position;
-    const field = policko[x + y * 10]; // Najde políčko na příslušné pozici.
-    field.click(); // Simuluje kliknutie. Spustí událost `click` na políčku.
+//UKOL 5 - BONUS
+const disableFields = () => {
+  policko.forEach((field) => {
+    field.disabled = true;
   });
+};
 
-/////koniec pridaneho kodu pro ukol 5
+const enableFields = () => {
+  policko.forEach((field) => {
+    if (
+      !field.classList.contains('board__field--circle') &&
+      !field.classList.contains('board__field--cross')
+    ) {
+      field.disabled = false;
+    }
+  });
+};
+
+//UKOL 5 - PRIDAVAM FETCH - VYTVORENA FUNKCIA MAKESUGGESTEDMOVE
+
+const makeSuggestedMove = () => {
+  disableFields();
+  fetch('https://piskvorky.czechitas-podklady.cz/api/suggest-next-move', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      board: herniPole,
+      player: 'x',
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const { x, y } = data.position;
+      const field = policko[x + y * 10];
+      field.click(); // Simuluje kliknuti. Spustí událost `click` na políčku.
+    });
+  enableFields();
+};
+
+/////
 
 const testMap = Array.from(policko).map((p) => {
   if (p.classList.contains('board__field--circle')) {
