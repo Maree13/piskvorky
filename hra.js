@@ -12,6 +12,13 @@ const ikonCross = `<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45
 
 const buttonCircleElm = document.querySelector('#playing');
 
+// PRIDAVAM ZVUK
+function playAudioAndShowAlert(message, vitez) {
+  const audio = document.getElementById('myAudio');
+  audio.play();
+  alert(`Vyhrál hráč se symbolem ${vitez}.`);
+}
+
 const addClass = (event, i) => {
   herniPole[i] = currentPlayer === 'circle' ? 'o' : 'x'; //Nastav herniPole[i] na 'o', pokud je currentPlayer 'circle', jinak nastav herniPole[i] na 'x'. (Ekvivalent kodu: if (currentPlayer === 'circle') {
   //   herniPole[i] = 'o';
@@ -24,20 +31,30 @@ const addClass = (event, i) => {
     currentPlayer = 'cross';
     console.log(buttonCircleElm);
     buttonCircleElm.innerHTML = ikonCross;
-    herniPole[i] = 'o';
+    //herniPole[i] = 'o';
   } else {
     event.target.classList.add('board__field--cross');
     event.target.disabled = true;
     currentPlayer = 'circle';
     console.log(buttonCircleElm);
     buttonCircleElm.innerHTML = ikonCircle;
-    herniPole[i] = 'x';
+    //herniPole[i] = 'x';
   }
+
+  // VERZE BEZ ZVUKU
+  // const vitez = findWinner(herniPole);
+  // if (vitez === 'o' || vitez === 'x') {
+  //   setTimeout(() => {
+  //     alert(`Vyhrál hráč se symbolem ${vitez}.`);
+  //   }, 200);
+  // }
+
+  // PRIDALA SOM ZVUK
 
   const vitez = findWinner(herniPole);
   if (vitez === 'o' || vitez === 'x') {
     setTimeout(() => {
-      alert(`Vyhrál hráč se symbolem ${vitez}.`);
+      playAudioAndShowAlert(`Vyhrál hráč se symbolem ${vitez}.`, vitez); // Ve verzy se zvukem pridan druhy parametr vitez
       location.reload();
     }, 200);
   }
@@ -106,12 +123,12 @@ const makeSuggestedMove = () => {
 
 /////
 
-const testMap = Array.from(policko).map((p) => {
-  if (p.classList.contains('board__field--circle')) {
-    return 'o';
-  } else if (p.classList.contains('board__field--cross')) {
-    return 'x';
-  } else {
-    return '_';
-  }
-});
+// const testMap = Array.from(policko).map((p) => {
+//   if (p.classList.contains('board__field--circle')) {
+//     return 'o';
+//   } else if (p.classList.contains('board__field--cross')) {
+//     return 'x';
+//   } else {
+//     return '_';
+//   }
+// });
